@@ -1,0 +1,158 @@
+/* MAIN */
+main {
+    background-color: #E3E3E3;
+}
+
+/* canvas */
+.canvas-container {
+    background-color: rgb(147, 255, 255);
+    margin: 2vh 2vw;
+    width: 50vw;
+    height: 70vh;
+}
+
+/* canvas edit options */
+.canvas-edit-btn {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+}
+
+.input-text {
+    width: 340px;
+
+}
+
+.canvas-edit-btn img {
+    width: 50%;
+    height: 50%;
+}
+
+.dropdown {
+    /* The container <div> - needed to position the dropdown content */
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    width: 200px;
+}
+
+.dropdown-content {
+    /* Dropdown Content (Hidden by Default) */
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    /* Links inside the dropdown */
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.icon-roleta {
+    height: 120px;
+    width: 340px;
+}
+
+/* canvas edit grid */
+.canvas-edit {
+    width: 40vw;
+    height: 60vh;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr) 2fr;
+}
+
+.input-text {
+    grid-row: 1;
+    grid-column: 1/6;
+}
+
+.side-by-side {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.add {
+    grid-row: 2;
+    grid-column: 3;
+}
+
+.remove {
+    grid-row: 2;
+    grid-column: 4;
+}
+
+.increase-font {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.decrease-font {
+    grid-row: 3;
+    grid-column: 2;
+
+}
+
+.align-to-left {
+    grid-row: 3;
+    grid-column: 3;
+}
+
+.align-center {
+    grid-row: 3;
+    grid-column: 4;
+}
+
+.align-to-right {
+    grid-row: 3;
+    grid-column: 5;
+}
+
+.dropdown {
+    grid-row: 4;
+    grid-column: 1/4;
+}
+
+.text-stroke {
+    grid-row: 4;
+    grid-column: 4;
+}
+
+.color{
+    grid-row: 4;
+    grid-column: 5;
+}
+
+.icon-roleta{
+    grid-row: 5;
+    grid-column: 1/6;
+
+}

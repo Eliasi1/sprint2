@@ -1,6 +1,15 @@
+/* GENERAL */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --clr1: #FF7F00;
+}
+
 /* helpers */
 .flex {
-display: flex;
+    display: flex;
 }
 
 .flex-column {
@@ -15,6 +24,10 @@ display: flex;
     justify-content: space-around;
 }
 
+.align-centerx {
+    justify-content: center;
+}
+
 
 .align-center {
     align-items: center;
@@ -22,8 +35,9 @@ display: flex;
 
 /* header */
 .header {
-    background-color: orange;
+    background-color: var(--clr1);
 }
+
 .header .logo {
     color: aliceblue;
     margin-left: 5%;
@@ -33,9 +47,9 @@ display: flex;
     margin-right: 5%;
 }
 
-/* filter-bar */ 
+/* filter-bar */
 .filter-bar {
-   margin: 2vh;
+    margin: 2vh;
 }
 
 /* MAIN */
@@ -43,14 +57,16 @@ display: flex;
 .item {
     width: 100%;
     height: 250px;
+    cursor: pointer;
 }
+
 .img-table {
     background-color: #E3E3E3;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     /* grid-template-rows: repeat(3, 250px) ; */
-    grid-gap:20px;
+    grid-gap: 20px;
     justify-self: center;
     align-self: center;
 }
@@ -62,27 +78,55 @@ display: flex;
 
 .about img {
     height: 35vh;
-    justify-content: center;
-    justify-self: center;
-
+    width: 26vw;
 }
 
 .about-content {
-justify-content: center;
-padding: 50px;
+    padding: 50px;
+    width: 45vw;
+}
+
+.about-content p {
+    font-size: 20px;
+    margin: 5px 0 10px 0;
+}
+
+.about-content h3 {
+    font-size: 25px;
+    margin: 0;
 }
 
 .fa {
-    background-color: orange;
+    background-color: var(--clr1);
     color: aliceblue;
-    width: 40px;
-    font: normal normal normal 27px/1 FontAwesome  !important;
-    text-decoration: none;
-    margin: auto;
-    height: 40px;
+    font: normal normal normal 27px/1 FontAwesome !important;
+    padding: 10px;
+    /* font-size: 30px; */
+    /* width: 50px; */
     text-align: center;
+    text-decoration: none;
     border-radius: 10px;
-
-    
 }
 
+.fa-facebook {
+    padding: 10px 14px;
+}
+
+/* footer */
+.footer {
+    background-color: var(--clr1);
+    height: 16vw;
+}
+
+.footer h1,
+.footer p {
+    color: aliceblue;
+}
+
+.footer h1 {
+    margin-bottom: 3px;
+}
+
+.footer p {
+    margin-top: 3px;
+}
