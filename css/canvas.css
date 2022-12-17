@@ -1,6 +1,31 @@
 /* MAIN */
-main {
+.modal-canvas {
     background-color: #E3E3E3;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 2s;
+
+}
+
+.close {
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    top: 10vw;
+    right: 6vh;
+    transition: 2s;
+    cursor: pointer;
+}
+
+.modal-content {
+    margin-top: 10vh;
+    transition: 2s;
 }
 
 /* canvas */
@@ -9,6 +34,12 @@ main {
     margin: 2vh 2vw;
     width: 50vw;
     height: 70vh;
+    justify-content: center;
+}
+
+#my-canvas {
+    width: 100%;
+    height: 100%;
 }
 
 /* canvas edit options */
@@ -29,6 +60,16 @@ main {
 .canvas-edit-btn img {
     width: 50%;
     height: 50%;
+}
+
+.input-color {
+    display: inline-block;
+    position: relative;
+}
+.input-color:after {
+content: url(../img/ICONS/paint-board-and-brush.png);
+position: absolute;
+right: 6px;
 }
 
 .dropdown {
@@ -82,12 +123,14 @@ main {
 
 /* canvas edit grid */
 .canvas-edit {
-    width: 40vw;
+    width: 340px;
     height: 60vh;
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr) 2fr;
+    grid-template-columns: repeat(5, 60px);
+    grid-template-rows: repeat(4, 60px) 120px 60px;
+    margin: 2vh 5vw;
+
 }
 
 .input-text {
@@ -146,13 +189,22 @@ main {
     grid-column: 4;
 }
 
-.color{
+.input-color {
     grid-row: 4;
     grid-column: 5;
 }
 
-.icon-roleta{
+.icon-roleta {
     grid-row: 5;
     grid-column: 1/6;
+}
 
+.download-btn {
+    grid-row: 6;
+    grid-column: 2/4;
+}
+
+.share-btn {
+    grid-row: 6;
+    grid-column: 4/6;
 }

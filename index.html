@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/canvas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Meme-Generator</title>
 </head>
-<body>
+
+<body onload="onInit()">
     <div class="header flex space-between align-center">
         <h1 class="logo">memegen</h1>
         <section class="nav-buttons">
@@ -19,36 +22,21 @@
 
     <section class="filter-bar flex space-between align-center">
         <input type="search" placeholder="enter search keyword 🔍">
-        <div><button class="filter-keywords">more...</button></div>
+        <ul class="filter-keywords flex space-between">
+            <li><button onclick="console.log('coming soon')">more...</button></li>
+        </ul>
     </section>
 
     <main>
-        <section class="img-table">
-            <img class="item" src="./img/meme-imgs (square)/1.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/2.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/3.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/4.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/5.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/6.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/7.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/8.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/9.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/10.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/11.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/12.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/13.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/14.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/15.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/16.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/17.jpg"/>
-            <img class="item" src="./img/meme-imgs (square)/18.jpg"/>
+        <section class="meme-table">
         </section>
 
         <section class="about flex align-center align-centerx">
-            <img src="./img/Ellipse 2.png"/>
+            <img src="./img/Ellipse 2.png" />
             <div class="about-content flex flex-column">
-                <h3>Monica Geller</h3>
-                <p>is a fictional character, one of the six main characters who appears on the American sitcom Friends (1994–2004). Created by David Crane and Marta Kauffman</p>
+                <h3>Monica Geller (From 'friends'?)</h3>
+                <p>is a fictional character, one of the six main characters who appears on the American sitcom Friends
+                    (1994–2004). Created by David Crane and Marta Kauffman</p>
                 <div class="social-links">
                     <a href="#" class="fa fa-linkedin"></a>
                     <a href="#" class="fa fa-facebook"></a>
@@ -57,6 +45,54 @@
             </div>
         </section>
 
+
+        <div class="modal-canvas">
+            <div class="modal-content flex space-between align-center">
+                <div class="canvas-container"><canvas id="my-canvas" onclick="selectPoint(event)" width="600px"
+                        height="600px"></canvas></div>
+                <span class="close" onclick="onCloseModal()">&times;</span>
+                <div class="canvas-options">
+                    <div class="canvas-edit">
+                        <input type="text" class="canvas-edit-btn input-text" placeholder="add text here"
+                            oninput="onRenderText(this.value)">
+                        <button class="canvas-edit-btn side-by-side" onclick="onChangePlace()"><img
+                                src="./img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
+                                alt="side-by-side"></button>
+                        <button class="canvas-edit-btn add" onclick="onAddText()"><img src="./img/ICONS/add.png"
+                                alt="add"></button>
+                        <button class="canvas-edit-btn remove" onclick="onRemoveText()"><img src="./img/ICONS/trash.png"
+                                alt="remvoe"></button>
+                        <button class="canvas-edit-btn increase-font" onclick="onChangeFontSize(2)"><img
+                                src="./img/ICONS/increase font - icon.png" alt="increase-font"></button>
+                        <button class="canvas-edit-btn decrease-font" onclick="onChangeFontSize(-2)"><img
+                                src="./img/ICONS/decrease font - icon.png" alt="decrease-font"></button>
+                        <button class="canvas-edit-btn align-to-left" onclick="onTextAlign('left')"><img
+                                src="./img/ICONS/align-to-left.png" alt="align-to-left"></button>
+                        <button class="canvas-edit-btn align-center" onclick="onTextAlign('center')"><img
+                                src="./img/ICONS/center-text-alignment.png" alt="align-center"></button>
+                        <button class="canvas-edit-btn align-to-right" onclick="onTextAlign('right')"><img
+                                src="./img/ICONS/align-to-right.png" alt="align-right"></button>
+                        <button class="canvas-edit-btn text-stroke"><img src="./img/ICONS/text stroke.png"
+                                alt="text-stroke"></button>
+                        <div class="input-color"><input class="canvas-edit-btn" onclick="onColorChange()"></div>
+                        <div class="dropdown">
+                            <button class="canvas-edit-btn dropbtn">Dropdown</button>
+                            <div class="dropdown-content">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div>
+                        <div class="canvas-edit-btn icon-roleta">
+                        </div>
+                        <button class="action-btn download-btn"><a href="#" onclick="downloadCanvas(this)"
+                                download="my-img">download</a></button>
+                        <button class="action-btn share-btn">share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <section class="footer flex flex-column align-center align-centerx">
             <h1 class="logo">memegen</h1>
             <p>all rights reserved 2019</p>
@@ -64,5 +100,8 @@
     </main>
 
     <script src="./js/controller.js"></script>
+    <script src="./js/service/canvas.service.js"></script>
+    <script src="./js/service/memesTable.service.js"></script>
 </body>
+
 </html>
