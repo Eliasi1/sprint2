@@ -52,6 +52,21 @@
     margin: 2vh;
 }
 
+.filter-bar ul {
+    list-style-type: none;
+    max-width: 70vw;
+    flex-wrap: wrap;
+}
+.filter-bar ul > * {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.selected {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
 /* MAIN */
 /* table */
 .item {
@@ -60,11 +75,11 @@
     cursor: pointer;
 }
 
-.img-table {
+.meme-table {
     background-color: #E3E3E3;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     /* grid-template-rows: repeat(3, 250px) ; */
     grid-gap: 20px;
     justify-self: center;
