@@ -47,6 +47,24 @@
     margin-right: 5%;
 }
 
+.nav-button {
+    background: none;
+    color: white;
+    border: none;
+}
+
+.nav-button a {
+    cursor: pointer;
+    padding: 3vh;
+    text-decoration: none;
+    color: white;
+    
+}
+
+.nav-button a:hover {
+    border-bottom: 3px solid white;
+}
+
 /* filter-bar */
 .filter-bar {
     margin: 2vh;
