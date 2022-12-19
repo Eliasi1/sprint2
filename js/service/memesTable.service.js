@@ -50,11 +50,16 @@ function generateCategoryList() {
     renderCategoryList()
 }
 
-function renderCategoryList() {
+function renderCategoryList(itemAount=gCategories.length) {
     var strHTML = ''
-    gCategories.forEach(category =>
-        strHTML += `<li><a onclick="onSelectCategory(this)">${category}</a></li>`)
+    for (var i=0; i<itemAount; i++){
+        strHTML += `<li><a onclick="onSelectCategory(this)">${gCategories[i]}</a></li>`
+    }
     document.querySelector(".filter-keywords").innerHTML = strHTML
+
+}
+
+function renderCategoryMoreBtm(){
 
 }
 

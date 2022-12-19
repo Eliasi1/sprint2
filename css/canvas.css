@@ -17,8 +17,8 @@
     font-size: 40px;
     color: white;
     position: absolute;
-    top: 10vw;
-    right: 6vh;
+    top: 10vh;
+    right: 6vw;
     transition: 2s;
     cursor: pointer;
 }
@@ -26,6 +26,13 @@
 .modal-content {
     margin-top: 10vh;
     transition: 2s;
+}
+
+@media (max-width: 860px) {
+    .modal-content {
+        flex-direction: column;
+    }
+    
 }
 
 /* canvas */
@@ -37,7 +44,7 @@
     justify-content: center;
 }
 
-#my-canvas {
+#meme-canvas {
     width: 100%;
     height: 100%;
 }
@@ -57,20 +64,12 @@
 
 }
 
-.canvas-edit-btn img {
+.canvas-edit-btn img,
+input ~ img {
     width: 50%;
     height: 50%;
 }
 
-.input-color {
-    display: inline-block;
-    position: relative;
-}
-.input-color:after {
-content: url(../img/ICONS/paint-board-and-brush.png);
-position: absolute;
-right: 6px;
-}
 
 .dropdown {
     /* The container <div> - needed to position the dropdown content */
@@ -128,7 +127,7 @@ right: 6px;
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(5, 60px);
-    grid-template-rows: repeat(4, 60px) 120px 60px;
+    grid-template-rows: repeat(4, 60px) 120px 60px 60px;
     margin: 2vh 5vw;
 
 }
@@ -192,6 +191,9 @@ right: 6px;
 .input-color {
     grid-row: 4;
     grid-column: 5;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
 }
 
 .icon-roleta {
@@ -207,4 +209,28 @@ right: 6px;
 .share-btn {
     grid-row: 6;
     grid-column: 4/6;
+}
+
+.save-btn {
+    grid-row: 7;
+    grid-column: 4/6;  
+}
+
+.action-btn {
+    height: 60%;
+    background-color: var(--clr1);
+    color: white;
+    border-radius: 20px;
+    border-color: white;
+    cursor: pointer;
+    align-self: center;
+}
+
+.action-btn:hover {
+    background-color: #b55a00;
+}
+
+.action-btn a{
+color: white;
+text-decoration: none;
 }

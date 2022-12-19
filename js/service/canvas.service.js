@@ -1,6 +1,6 @@
 var gElCanvas
 var gCtx
-var gTextProperties = [{posX:'212',posY:'40',text:'hello my name is fufi',lineWidth:2, strokeStyle: 'white', fillStyle: 'black', fontSize:20, font: 'arial', textAlign: 'center'}]
+var gTextProperties = [{posX:'212',posY:'40',text:'hello my name is fufi',lineWidth:2, strokeStyle: 'white', fillStyle: 'black', fontSize:46, font: 'arial', textAlign: 'center'}]
 var gLineIdx = 0
 var gMeme = 'http://127.0.0.1:5500/img/meme-imgs(square)/1.jpg'
 
@@ -9,7 +9,7 @@ var gMeme = 'http://127.0.0.1:5500/img/meme-imgs(square)/1.jpg'
 
 function renderMeme(){
     console.log("initiated")
-    gElCanvas = document.getElementById('my-canvas')
+    gElCanvas = document.getElementById('meme-canvas')
     gCtx = gElCanvas.getContext('2d')
     resizeCanvas()
     drawImg()
@@ -92,4 +92,8 @@ function addText(){
 
 function changePlace(){
     gTextProperties.forEach(line => line.posY = line.posY === 40 ? 560 : 40)
+}
+
+function changeColor(color){
+    gTextProperties[gLineIdx].fillStyle = color;
 }
